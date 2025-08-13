@@ -1,0 +1,4 @@
+**/.venv/
+**/build/
+**/ui/dist/
+**/__pycache__/

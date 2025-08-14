@@ -23,10 +23,10 @@ KokoroDo/
 
 ### 🎯 How It Works
 
-1. **🔌 Worker Registration**: Worker starts, launches FastAPI in background thread, registers with Coordinator (capabilities + heartbeat)
-2. **🧠 Smart Routing**: Coordinator maintains registry of workers and models, routes to cheapest/fastest viable model first
-3. **📈 Intelligent Escalation**: If confidence/heuristics indicate low quality, escalates to larger model or different worker
-4. **📊 Real-time Dashboard**: Monitor online workers, queue depth, latency, errors, and model usage
+1. **Worker Registration**: Worker starts, launches FastAPI in background thread, registers with Coordinator (capabilities + heartbeat)
+2. **Smart Routing**: Coordinator maintains registry of workers and models, routes to cheapest/fastest viable model first
+3. **Intelligent Escalation**: If confidence/heuristics indicate low quality, escalates to larger model or different worker
+4. **Real-time Dashboard**: Monitor online workers, queue depth, latency, errors, and model usage
 
 ---
 
@@ -59,10 +59,10 @@ python app.py
 ```
 
 **What happens automatically:**
-- 🔄 FastAPI server starts in separate thread
-- 🪟 PyWebView opens with GTK backend (Linux)
-- 📡 Worker registers with coordinator
-- ⚙️ Desktop UI available for configuration (coordinator IP, model settings, logs)
+- FastAPI server starts in separate thread
+- PyWebView opens with GTK backend (Linux)
+- Worker registers with coordinator
+- Desktop UI available for configuration (coordinator IP, model settings, logs)
 
 ### Development Workflow
 
@@ -95,18 +95,17 @@ python ../app.py          # Launch PyWebView with updated UI
 ## ✨ Key Features
 
 ### Current Implementation
-- **🔌 Worker discovery and registration** (LAN-based)
-- **📊 Load reporting**
-- **🎯 Policy-based routing** (smallest-first, failover, escalation)
-- **📈 Basic metrics** (latency, throughput, error rates, per-model usage)
-- **🖥️ Desktop UI** for configuration without terminal
-- **🔒 Isolated environments** (separate Python deps)
+- **Worker discovery and registration** (LAN-based)
+- **Load reporting**
+- **Policy-based routing** (smallest-first, failover, escalation)
+- **Basic metrics** (latency, throughput, error rates, per-model usage)
+- **Desktop UI** for configuration without terminal
 
 ### Planned Features
-- **🧠 Confidence estimators** for smart escalation (entropy, self-rating, task heuristics)
-- **📏 Model-aware scheduling** (context length, VRAM needs, quantization)
-- **🌊 Token streaming** and WebSocket endpoints
-- **🔧 Adapter SDK** for third-party/community models
+- **Confidence estimators** for smart escalation (entropy, self-rating, task heuristics)
+- **Model-aware scheduling** (context length, VRAM needs, quantization)
+- **Token streaming** and WebSocket endpoints
+- **Adapter SDK** for third-party/community models
 
 ---
 

@@ -1,9 +1,19 @@
-# <img src="ReadMeAssets/KokoroDo.png" alt="KokoroDo Logo" width="20" style="vertical-align: middle;"/> KokoroDo
+<p align="center">
+  <img src="ReadMeAssets/KokoroDo.png" alt="KokoroDo Logo" width="200"/>
+</p>
 
-> **Dynamic AI inference across your local network**  
-> Route requests to the smallest capable model first, escalate when needed.
+<h1 align="center">KokoroDo</h1>
 
-KokoroDo is a LAN-first, plug-and-play system for **dynamic AI inference** across multiple machines. It routes requests to the **smallest capable model first** and escalates to larger models only when needed, balancing speed, cost, and accuracy. The system is designed to be **extensible** (adapters for different models/frameworks), **self-hostable**, and friendly to hobbyist hardware.
+<p align="center">
+  <em>Dynamic AI inference across your local network</em><br>
+  Route requests to the smallest capable model first, escalate when needed.
+</p>
+
+<p align="center">
+  KokoroDo is a LAN-first, plug-and-play system for <strong>dynamic AI inference</strong> across multiple machines.  
+  It routes requests to the <strong>smallest capable model first</strong> and escalates to larger models only when needed, balancing speed, cost, and accuracy.  
+  The system is designed to be <strong>extensible</strong> (adapters for different models/frameworks), <strong>self-hostable</strong>, and friendly to hobbyist hardware.
+</p>
 
 ---
 

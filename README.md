@@ -1,4 +1,4 @@
-# <img src="ReadMeAssets/KokoroDo.png" alt="KokoroDo Logo" width="40" style="vertical-align: middle;"/> KokoroDo
+# <img src="ReadMeAssets/KokoroDo.png" alt="KokoroDo Logo" width="20" style="vertical-align: middle;"/> KokoroDo
 
 > **Dynamic AI inference across your local network**  
 > Route requests to the smallest capable model first, escalate when needed.

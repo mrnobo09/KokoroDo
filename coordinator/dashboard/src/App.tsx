@@ -1,9 +1,17 @@
+import { Route,Routes } from "react-router-dom"
+import Home from "./screens/Home"
+import Overlay from "./components/Overlay" //Overlay for sidebar and other components if needed in the future
 
 function App() {
 
   return (
     <>
-        <h1 className="h-1 text-[#5125e2]">Hello World</h1>
+    <Overlay>
+      <Routes>
+          <Route path="/" element={<Home />} />
+      </Routes>
+    </Overlay>
+      
     </>
   )
 }

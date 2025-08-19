@@ -1,3 +1,5 @@
+#This file is responsible for managing worker connections via websocket
+
 from fastapi import APIRouter, WebSocket
 import json
 from shared.workers import add_worker, remove_worker, get_workers
@@ -20,5 +22,7 @@ async def worker_websocket_endpoint(websocket: WebSocket):
             print(f"Current workers: {workers}")
     except Exception:
         if worker_id:
+            print(f"Worker {worker_id} disconnected.")
             remove_worker(worker_id)
+            
         await websocket.close()

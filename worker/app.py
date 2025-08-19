@@ -18,6 +18,6 @@ if __name__ == '__main__':
         url = "./ui/dist/index.html",
     )
 
-    webview.start(gui="gtk3")
+    webview.start(gui="qt")
 
 

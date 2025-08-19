@@ -3,30 +3,39 @@ import { AiOutlineHome, AiOutlineTeam, AiOutlineSetting, AiOutlineInfoCircle } f
 import { BsCpu } from 'react-icons/bs';
 import { HiOutlineBookOpen } from 'react-icons/hi';
 import { IconType } from 'react-icons';
+import KokoroDoLogo from '../../assets/KokoroDo.png'; 
+import { useNavigate } from 'react-router-dom';
 
 interface MenuItem {
   name: string;
   icon: IconType;
+  link: string;
 }
 
 const Sidebar: React.FC = () => {
   const menuItems: MenuItem[] = [
-    { name: 'Home', icon: AiOutlineHome },
-    { name: 'Workers', icon: AiOutlineTeam },
-    { name: 'Models', icon: BsCpu },
-    { name: 'Settings', icon: AiOutlineSetting },
-    { name: 'About', icon: AiOutlineInfoCircle },
-    { name: 'Guide', icon: HiOutlineBookOpen }
+    { name: 'Home', icon: AiOutlineHome, link:'/' },
+    { name: 'Workers', icon: AiOutlineTeam, link:'/workers'},
+    { name: 'Models', icon: BsCpu, link:'/Home' },
+    { name: 'Settings', icon: AiOutlineSetting, link:'/Home' },
+    { name: 'About', icon: AiOutlineInfoCircle, link:'/Home' },
+    { name: 'Guide', icon: HiOutlineBookOpen, link:'/Home' }
   ];
 
+  const navigate = useNavigate();
+
   return (
-    <div className="h-screen top-0 left-0 fixed w-64 bg-gradient-to-b from-slate-900 to-slate-800 text-white p-6 shadow-2xl border-r border-slate-700">
+    <div className="h-screen top-0 left-0 w-64 bg-gradient-to-b from-slate-900 to-slate-800 text-white p-6 shadow-2xl border-r border-slate-700">
       {/* Header */}
-      <div className="mb-12">
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+      <div className="mb-12 flex flex-col items-center">
+        <div className="w-full flex justify-center mb-4">
+          <img width={100} className='left-0 right-0' src={KokoroDoLogo}/>
+        </div>
+        
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-[#00fff2] to-[#0C67A8] bg-clip-text text-transparent mb-2">
           KokoroDo
         </h1>
-        <div className="h-1 w-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+        <div className="h-1 w-20 bg-gradient-to-r from-[#00fff2] to-[#0C67A8] rounded-full"></div>
       </div>
 
       {/* Navigation */}
@@ -36,6 +45,7 @@ const Sidebar: React.FC = () => {
             const IconComponent = item.icon;
             return (
               <button
+                onClick={()=> navigate(item.link)}
                 key={item.name}
                 className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/50 transition-all duration-200 group"
               >

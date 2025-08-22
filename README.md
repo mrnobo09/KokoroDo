@@ -60,7 +60,53 @@ npm run dev
 
 ### Worker Application (Desktop)
 
+
+
 The worker runs as a desktop application using PyWebView, combining both FastAPI backend and React frontend.
+
+
+#### GPU Monitoring Dependencies (Worker Machines Only)
+
+Workers require GPU monitoring utilities to report hardware capabilities and usage. Install the appropriate package for your GPU vendor:
+
+**Ubuntu/Debian:**
+```bash
+# NVIDIA
+sudo apt update && sudo apt install -y nvidia-utils-535   # version may vary
+
+# AMD
+sudo apt install -y rocm-smi
+
+# Intel
+sudo apt install -y intel-gpu-tools
+```
+
+**Arch Linux/Manjaro:**
+```bash
+# NVIDIA
+sudo pacman -S nvidia-utils
+
+# AMD
+sudo pacman -S rocm-smi-lib      # or AUR: yay -S rocm-smi
+
+# Intel
+sudo pacman -S intel-gpu-tools
+```
+
+**Fedora/RHEL:**
+```bash
+# NVIDIA
+sudo dnf install -y nvidia-driver nvidia-utils
+
+# AMD
+sudo dnf install -y rocm-smi
+
+# Intel
+sudo dnf install -y intel-gpu-tools
+```
+
+> **Note**: The Coordinator does not require GPU monitoring packages - these are only needed on Worker machines for hardware detection and performance monitoring.
+
 
 ```bash
 cd worker
@@ -138,3 +184,5 @@ python ../app.py          # Launch PyWebView with updated UI
 <div align="center">
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXhiZHA0c2NweDgzMzRyaTgxdDJreWhsODBoeXR1eWIydzNpM29iayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sthmCnCpfr8M8jtTQy/giphy.gif" width="200" alt="Bongo Cat playful"/>
 </div>
+
+

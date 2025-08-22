@@ -22,10 +22,10 @@ async def get_workers_websocket(websocket: WebSocket):
             if workers != last_workers:
                 # Send workers list to the client
                 await websocket.send_text(json.dumps(workers))
-                print(f"Sent workers list: {workers}")
+                #print(f"Sent workers list: {workers}")
                 last_workers = copy.deepcopy(workers)
 
-            await asyncio.sleep(2)  # Adjust the frequency of updates as needed
+            await asyncio.sleep(1)  # Adjust the frequency of updates as needed
             
     except Exception as e:
         print(f"Error in get_workers_websocket: {e}")

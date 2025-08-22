@@ -15,7 +15,7 @@ if __name__ == '__main__':
     #Using pywebview to run react + vite app as desktop application
     webview.create_window(
         title="KokoroDo - Worker",
-        url = "./ui/dist/index.html",
+        url = "http://localhost:5173", 
     )
 
     webview.start(gui="qt")

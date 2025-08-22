@@ -19,7 +19,7 @@ async def worker_websocket_endpoint(websocket: WebSocket):
             add_worker(worker_info)
             workers = get_workers()
             
-            print(f"Current workers: {workers}")
+            #print(f"Current workers: {workers}")
     except Exception:
         if worker_id:
             print(f"Worker {worker_id} disconnected.")

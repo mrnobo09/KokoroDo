@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .routes.coord_client import coord_client_handler
+from routes.coord_client import coord_client_handler
 
 app = FastAPI()
 uri = "ws://localhost:8000/ws/worker"
